@@ -8,8 +8,8 @@ body, html {
     font-family: sans-serif;
     scroll-behavior: smooth;
     padding-top: 80px;
+    overflow-x: hidden;
 }
-
 
 .section {
     min-height: 100vh;
@@ -21,6 +21,7 @@ body, html {
 }
 
 
+/*NAVBAR*/
 .navbar {
     position: fixed;
     top: 0;
@@ -73,18 +74,29 @@ body, html {
 
 /*PHOTO PAGE STYLES */
 
+.photopage-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px 0;
+    overflow: hidden; /* prevent vertical scrollbar */
+}
+
 .row-container{
     overflow: hidden;
+    display: flex;
+    width: 100%;
+
 }
 
 .row-horiz {
     display: flex;
-    gap: 40px;
     flex-direction: row;
 }
 
 .photo-item {
-    flex-shrink: 0; /* prevent shrinking */
-    width: 300px;
-    height: auto;
+    flex-shrink: 0;
+    height: 310px;
+    width: 310px;
+    margin-right: 40px;
 }

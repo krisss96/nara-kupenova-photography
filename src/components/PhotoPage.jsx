@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState } from 'react';
 
 const _row1 = [
     '/assets/Blissful Trip by Nara Kupenova.jpg',
@@ -46,203 +46,186 @@ const _row5 = [
 ];
 
 const ROW_WIDTH = 2100;
+const COLM_HEIGHT = 1800;
 
 function PhotoPage() {
 
     const [x, setX] = useState(0);
+    const [y, setY] = useState(0);
 
     const handleWheel = (e) => {
-        const movement = e.deltaX !== 0 ? e.deltaX : e.deltaY;
-        setX((prevX) => prevX - movement);
+        setX((prevX) => prevX - e.deltaX);
+        setY((prevY) => prevY - e.deltaY);
+
     };
 
-    const loopStyle = {
+    const loopStyleX = {
         transform: `translateX(${(x % ROW_WIDTH) - ROW_WIDTH}px)`,
+    };
+
+    const loopStyleY = {
+        transform: `translateY(${(x % COLM_HEIGHT) - COLM_HEIGHT}px)`,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '50px' // This is the gap between the 5th row of one block and 1st row of next
     };
 
     return (
         <div className="photopage-content" onWheel={handleWheel}>
-            
-            {/*Row 1*/}
-            <div className="row-container">
-                <div className="row-horiz" style={loopStyle}>
-                    {/*LEFT*/}
-                    {_row1.map((src, index) => (
-                        <img
-                            key={`r1-1-${index}`}
-                            src={src}
-                            alt="gallery"
-                            className="photo-item"
-                        />
-                    ))}
 
-                    {/*CENTER*/}
-                    {_row1.map((src, index) => (
-                        <img
-                            key={`r1-2-${index}`}
-                            src={src}
-                            alt="gallery"
-                            className="photo-item"
-                        />
-                    ))}
+            {/* WRAPPER FOR VERTICAL MOVEMENT */}
+            <div style={loopStyleY}>
 
-                    {/*RIGHT*/}
-                    {_row1.map((src, index) => (
-                        <img
-                            key={`r1-3-${index}`}
-                            src={src}
-                            alt="gallery"
-                            className="photo-item"
-                        />
-                    ))}
+                {/* =========================================
+                    BLOCK 1: TOP BUFFER (The Copy Above)
+                   ========================================= */}
 
+                {/* Row 1 (Top) */}
+                <div className="row-container">
+                    <div className="row-horiz" style={loopStyleX}>
+                        {_row1.map((src, i) => <img key={`top-r1-1-${i}`} src={src} className="photo-item" />)}
+                        {_row1.map((src, i) => <img key={`top-r1-2-${i}`} src={src} className="photo-item" />)}
+                        {_row1.map((src, i) => <img key={`top-r1-3-${i}`} src={src} className="photo-item" />)}
+                    </div>
                 </div>
-            </div>
 
-            {/*Row 2*/}
-            <div className="row-container">
-                <div className="row-horiz" style={loopStyle}>
-                    {/*LEFT*/}
-                    {_row2.map((src, index) => (
-                        <img
-                            key={`r2-1-${index}`}
-                            src={src}
-                            alt="gallery"
-                            className="photo-item"
-                        />
-                    ))}
-
-                    {/*CENTER*/}
-                    {_row2.map((src, index) => (
-                        <img
-                            key={`r2-2-${index}`}
-                            src={src}
-                            alt="gallery"
-                            className="photo-item"
-                        />
-                    ))}
-
-                    {/*RIGHT*/}
-                    {_row2.map((src, index) => (
-                        <img
-                            key={`r2-3-${index}`}
-                            src={src}
-                            alt="gallery"
-                            className="photo-item"
-                        />
-                    ))}
-
+                {/* Row 2 (Top) */}
+                <div className="row-container">
+                    <div className="row-horiz" style={loopStyleX}>
+                        {_row2.map((src, i) => <img key={`top-r2-1-${i}`} src={src} className="photo-item" />)}
+                        {_row2.map((src, i) => <img key={`top-r2-2-${i}`} src={src} className="photo-item" />)}
+                        {_row2.map((src, i) => <img key={`top-r2-3-${i}`} src={src} className="photo-item" />)}
+                    </div>
                 </div>
-            </div>
 
-            {/*Row 3*/}
-            <div className="row-container">
-                <div className="row-horiz" style={loopStyle}>
-                    {/*LEFT*/}
-                    {_row3.map((src, index) => (
-                        <img
-                            key={`r3-1-${index}`}
-                            src={src}
-                            alt="gallery"
-                            className="photo-item"
-                        />
-                    ))}
-
-                    {/*CENTER*/}
-                    {_row3.map((src, index) => (
-                        <img
-                            key={`r3-2-${index}`}
-                            src={src}
-                            alt="gallery"
-                            className="photo-item"
-                        />
-                    ))}
-
-                    {/*RIGHT*/}
-                    {_row3.map((src, index) => (
-                        <img
-                            key={`r3-3-${index}`}
-                            src={src}
-                            alt="gallery"
-                            className="photo-item"
-                        />
-                    ))}
-
+                {/* Row 3 (Top) */}
+                <div className="row-container">
+                    <div className="row-horiz" style={loopStyleX}>
+                        {_row3.map((src, i) => <img key={`top-r3-1-${i}`} src={src} className="photo-item" />)}
+                        {_row3.map((src, i) => <img key={`top-r3-2-${i}`} src={src} className="photo-item" />)}
+                        {_row3.map((src, i) => <img key={`top-r3-3-${i}`} src={src} className="photo-item" />)}
+                    </div>
                 </div>
-            </div>
 
-            {/*Row 4*/}
-            <div className="row-container">
-                <div className="row-horiz" style={loopStyle}>
-                    {/*LEFT*/}
-                    {_row4.map((src, index) => (
-                        <img
-                            key={`r4-1-${index}`}
-                            src={src}
-                            alt="gallery"
-                            className="photo-item"
-                        />
-                    ))}
-
-                    {/*CENTER*/}
-                    {_row4.map((src, index) => (
-                        <img
-                            key={`r4-2-${index}`}
-                            src={src}
-                            alt="gallery"
-                            className="photo-item"
-                        />
-                    ))}
-
-                    {/*RIGHT*/}
-                    {_row4.map((src, index) => (
-                        <img
-                            key={`r4-3-${index}`}
-                            src={src}
-                            alt="gallery"
-                            className="photo-item"
-                        />
-                    ))}
-
+                {/* Row 4 (Top) */}
+                <div className="row-container">
+                    <div className="row-horiz" style={loopStyleX}>
+                        {_row4.map((src, i) => <img key={`top-r4-1-${i}`} src={src} className="photo-item" />)}
+                        {_row4.map((src, i) => <img key={`top-r4-2-${i}`} src={src} className="photo-item" />)}
+                        {_row4.map((src, i) => <img key={`top-r4-3-${i}`} src={src} className="photo-item" />)}
+                    </div>
                 </div>
-            </div>
 
-            {/*Row 5*/}
-            <div className="row-container">
-                <div className="row-horiz" style={loopStyle}>
-                    {/*LEFT*/}
-                    {_row5.map((src, index) => (
-                        <img
-                            key={`r5-1-${index}`}
-                            src={src}
-                            alt="gallery"
-                            className="photo-item"
-                        />
-                    ))}
-
-                    {/*CENTER*/}
-                    {_row5.map((src, index) => (
-                        <img
-                            key={`r5-2-${index}`}
-                            src={src}
-                            alt="gallery"
-                            className="photo-item"
-                        />
-                    ))}
-
-                    {/*RIGHT*/}
-                    {_row5.map((src, index) => (
-                        <img
-                            key={`r5-3-${index}`}
-                            src={src}
-                            alt="gallery"
-                            className="photo-item"
-                        />
-                    ))}
-
+                {/* Row 5 (Top) */}
+                <div className="row-container">
+                    <div className="row-horiz" style={loopStyleX}>
+                        {_row5.map((src, i) => <img key={`top-r5-1-${i}`} src={src} className="photo-item" />)}
+                        {_row5.map((src, i) => <img key={`top-r5-2-${i}`} src={src} className="photo-item" />)}
+                        {_row5.map((src, i) => <img key={`top-r5-3-${i}`} src={src} className="photo-item" />)}
+                    </div>
                 </div>
-            </div>
 
+
+                {/* =========================================
+                    BLOCK 2: MAIN (The Ones you see initially)
+                   ========================================= */}
+
+                {/* Row 1 (Main) */}
+                <div className="row-container">
+                    <div className="row-horiz" style={loopStyleX}>
+                        {_row1.map((src, i) => <img key={`main-r1-1-${i}`} src={src} className="photo-item" />)}
+                        {_row1.map((src, i) => <img key={`main-r1-2-${i}`} src={src} className="photo-item" />)}
+                        {_row1.map((src, i) => <img key={`main-r1-3-${i}`} src={src} className="photo-item" />)}
+                    </div>
+                </div>
+
+                {/* Row 2 (Main) */}
+                <div className="row-container">
+                    <div className="row-horiz" style={loopStyleX}>
+                        {_row2.map((src, i) => <img key={`main-r2-1-${i}`} src={src} className="photo-item" />)}
+                        {_row2.map((src, i) => <img key={`main-r2-2-${i}`} src={src} className="photo-item" />)}
+                        {_row2.map((src, i) => <img key={`main-r2-3-${i}`} src={src} className="photo-item" />)}
+                    </div>
+                </div>
+
+                {/* Row 3 (Main) */}
+                <div className="row-container">
+                    <div className="row-horiz" style={loopStyleX}>
+                        {_row3.map((src, i) => <img key={`main-r3-1-${i}`} src={src} className="photo-item" />)}
+                        {_row3.map((src, i) => <img key={`main-r3-2-${i}`} src={src} className="photo-item" />)}
+                        {_row3.map((src, i) => <img key={`main-r3-3-${i}`} src={src} className="photo-item" />)}
+                    </div>
+                </div>
+
+                {/* Row 4 (Main) */}
+                <div className="row-container">
+                    <div className="row-horiz" style={loopStyleX}>
+                        {_row4.map((src, i) => <img key={`main-r4-1-${i}`} src={src} className="photo-item" />)}
+                        {_row4.map((src, i) => <img key={`main-r4-2-${i}`} src={src} className="photo-item" />)}
+                        {_row4.map((src, i) => <img key={`main-r4-3-${i}`} src={src} className="photo-item" />)}
+                    </div>
+                </div>
+
+                {/* Row 5 (Main) */}
+                <div className="row-container">
+                    <div className="row-horiz" style={loopStyleX}>
+                        {_row5.map((src, i) => <img key={`main-r5-1-${i}`} src={src} className="photo-item" />)}
+                        {_row5.map((src, i) => <img key={`main-r5-2-${i}`} src={src} className="photo-item" />)}
+                        {_row5.map((src, i) => <img key={`main-r5-3-${i}`} src={src} className="photo-item" />)}
+                    </div>
+                </div>
+
+
+                {/* =========================================
+                    BLOCK 3: BOTTOM BUFFER (The Copy Below)
+                   ========================================= */}
+
+                {/* Row 1 (Bottom) */}
+                <div className="row-container">
+                    <div className="row-horiz" style={loopStyleX}>
+                        {_row1.map((src, i) => <img key={`btm-r1-1-${i}`} src={src} className="photo-item" />)}
+                        {_row1.map((src, i) => <img key={`btm-r1-2-${i}`} src={src} className="photo-item" />)}
+                        {_row1.map((src, i) => <img key={`btm-r1-3-${i}`} src={src} className="photo-item" />)}
+                    </div>
+                </div>
+
+                {/* Row 2 (Bottom) */}
+                <div className="row-container">
+                    <div className="row-horiz" style={loopStyleX}>
+                        {_row2.map((src, i) => <img key={`btm-r2-1-${i}`} src={src} className="photo-item" />)}
+                        {_row2.map((src, i) => <img key={`btm-r2-2-${i}`} src={src} className="photo-item" />)}
+                        {_row2.map((src, i) => <img key={`btm-r2-3-${i}`} src={src} className="photo-item" />)}
+                    </div>
+                </div>
+
+                {/* Row 3 (Bottom) */}
+                <div className="row-container">
+                    <div className="row-horiz" style={loopStyleX}>
+                        {_row3.map((src, i) => <img key={`btm-r3-1-${i}`} src={src} className="photo-item" />)}
+                        {_row3.map((src, i) => <img key={`btm-r3-2-${i}`} src={src} className="photo-item" />)}
+                        {_row3.map((src, i) => <img key={`btm-r3-3-${i}`} src={src} className="photo-item" />)}
+                    </div>
+                </div>
+
+                {/* Row 4 (Bottom) */}
+                <div className="row-container">
+                    <div className="row-horiz" style={loopStyleX}>
+                        {_row4.map((src, i) => <img key={`btm-r4-1-${i}`} src={src} className="photo-item" />)}
+                        {_row4.map((src, i) => <img key={`btm-r4-2-${i}`} src={src} className="photo-item" />)}
+                        {_row4.map((src, i) => <img key={`btm-r4-3-${i}`} src={src} className="photo-item" />)}
+                    </div>
+                </div>
+
+                {/* Row 5 (Bottom) */}
+                <div className="row-container">
+                    <div className="row-horiz" style={loopStyleX}>
+                        {_row5.map((src, i) => <img key={`btm-r5-1-${i}`} src={src} className="photo-item" />)}
+                        {_row5.map((src, i) => <img key={`btm-r5-2-${i}`} src={src} className="photo-item" />)}
+                        {_row5.map((src, i) => <img key={`btm-r5-3-${i}`} src={src} className="photo-item" />)}
+                    </div>
+                </div>
+
+            </div>
         </div>
     );
 }

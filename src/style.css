@@ -5,9 +5,9 @@
 }
 
 body, html {
-    font-family: sans-serif;
     overflow-x: hidden;
     overscroll-behavior-x: none;
+    background-color: #121212;
 }
 
 /*NAVBAR*/
@@ -21,22 +21,30 @@ body, html {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    background: rgba(0,0,0,0.4);
+    background: rgb(32, 30, 30);
     color: white;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 40px;
+    padding-right: 1.5rem;
 }
 
 .nav-links a {
     text-decoration: none;
-    font-size: 1.1rem;
-    text-transform: uppercase;
+    font-size: 1.3rem;
     color: white;
     letter-spacing: 1px;
+}
+
+.nav-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Italiana', sans-serif;
+    color: #d3b56b;
+    margin-left: -1.6rem;
 }
 
 
@@ -75,7 +83,6 @@ body, html {
     overflow: hidden;
     display: flex;
     width: 100%;
-
 }
 
 .row-horiz {
@@ -88,5 +95,146 @@ body, html {
     height: 310px;
     width: 310px;
     margin-right: 40px;
+}
+
+
+/* HOME PAGE STYLES */
+.home-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.home-content {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-bottom: 5%;
+    padding-right: 10%;
+}
+
+.diagonal-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.diagonal-img {
+
+    width: 430px;
+    height: 145%;
+    object-fit: cover; /* ensures it fills the area while maintaining aspect ratio */
+    position: absolute;
+    top: 47%;
+    left: 27%;
+    transform: translate(-50%, -50%) rotate(35deg); /* centers and rotates the image */
+    opacity: 0.8;
+}
+
+.text-container {
+    position: relative;
+    z-index: 10;
+    max-width: 450px;
+    text-align: left;
+    padding-left: 5rem;
+    padding-bottom: 0rem;
+}
+
+.title-name {
+    font-size: 5.5rem;
+    line-height: 0.9;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -2px;
+    font-family: 'Italiana', sans-serif;
+    color: #d3b56b;
+}
+
+.description {
+    font-family: monospace;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    color: #f5f5f5;
+}
+
+.gallery-btn {
+    font-size: 2.3rem;
+    text-decoration: none; /* removes underline */
+    color: #d3b56b;
+    cursor: pointer;
+    display: inline-block;
+    font-family: monospace;
+    background-color: #302626;
+    padding: 0.5rem 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-btn:hover {
+    transform: scale(1) translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.69);
+    background-color: #3d3030;
+}
+
+.side-panel {
+    height: 100%;
+    z-index: 20;
+    flex-shrink: 0;
+    background-size: 100% auto; /* keeps aspect ratio*/
+    background-repeat: repeat-y; /* ensures looping correctly */
+    background-position: top center;
+}
+
+.left-panel {
+    background-image: url('./assets/left-border.png');
+    width: 55px;
+}
+
+.right-panel {
+    background-image: url('./assets/right-border.png');
+    width: 60px;
+}
+
+.side-panel.scrolling {
+    animation: scrollFilm 0.5s linear infinite;
+}
+
+@keyframes scrollFilm {
+    from { background-position: 0 0; }
+    to { background-position: 0 1000px; }
+}
+
+.flash-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
+    mix-blend-mode: hard-light;
+    opacity: 0;
+    transform: scale(0.5);
+    z-index: 100;
+    transition: opacity 0.05s ease-out, transform 0.2s ease-out;
+}
+
+.flash-overlay.active {
+    opacity: 0.9;
+    transform: scale(2);
+    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
 }
 

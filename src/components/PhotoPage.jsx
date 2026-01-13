@@ -45,7 +45,7 @@ const _row5 = [
     '/assets/d926dead40c5d59124c16b6d506f0fc0.jpg'
 ];
 
-const ROW_WIDTH = 2100;
+const ROW_WIDTH = 1550;
 const COLM_HEIGHT = 1800;
 
 function PhotoPage() {
@@ -64,23 +64,17 @@ function PhotoPage() {
     };
 
     const loopStyleY = {
-        transform: `translateY(${(x % COLM_HEIGHT) - COLM_HEIGHT}px)`,
+        transform: `translateY(${(y % COLM_HEIGHT) - COLM_HEIGHT}px)`,
         display: 'flex',
         flexDirection: 'column',
-        gap: '50px' // This is the gap between the 5th row of one block and 1st row of next
+        gap: '50px'
     };
 
     return (
         <div className="photopage-content" onWheel={handleWheel}>
-
-            {/* WRAPPER FOR VERTICAL MOVEMENT */}
             <div style={loopStyleY}>
 
-                {/* =========================================
-                    BLOCK 1: TOP BUFFER (The Copy Above)
-                   ========================================= */}
-
-                {/* Row 1 (Top) */}
+                {/* Row 1 Top */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row1.map((src, i) => <img key={`top-r1-1-${i}`} src={src} className="photo-item" />)}
@@ -89,7 +83,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
-                {/* Row 2 (Top) */}
+                {/* Row 2 Top */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row2.map((src, i) => <img key={`top-r2-1-${i}`} src={src} className="photo-item" />)}
@@ -98,7 +92,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
-                {/* Row 3 (Top) */}
+                {/* Row 3 Top */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row3.map((src, i) => <img key={`top-r3-1-${i}`} src={src} className="photo-item" />)}
@@ -107,7 +101,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
-                {/* Row 4 (Top) */}
+                {/* Row 4 Top */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row4.map((src, i) => <img key={`top-r4-1-${i}`} src={src} className="photo-item" />)}
@@ -116,7 +110,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
-                {/* Row 5 (Top) */}
+                {/* Row 5 Top */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row5.map((src, i) => <img key={`top-r5-1-${i}`} src={src} className="photo-item" />)}
@@ -125,12 +119,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
-
-                {/* =========================================
-                    BLOCK 2: MAIN (The Ones you see initially)
-                   ========================================= */}
-
-                {/* Row 1 (Main) */}
+                {/* Row 1 Center */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row1.map((src, i) => <img key={`main-r1-1-${i}`} src={src} className="photo-item" />)}
@@ -139,7 +128,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
-                {/* Row 2 (Main) */}
+                {/* Row 2 Center */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row2.map((src, i) => <img key={`main-r2-1-${i}`} src={src} className="photo-item" />)}
@@ -148,7 +137,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
-                {/* Row 3 (Main) */}
+                {/* Row 3 Center */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row3.map((src, i) => <img key={`main-r3-1-${i}`} src={src} className="photo-item" />)}
@@ -157,7 +146,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
-                {/* Row 4 (Main) */}
+                {/* Row 4 Center */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row4.map((src, i) => <img key={`main-r4-1-${i}`} src={src} className="photo-item" />)}
@@ -166,7 +155,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
-                {/* Row 5 (Main) */}
+                {/* Row 5 Center */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row5.map((src, i) => <img key={`main-r5-1-${i}`} src={src} className="photo-item" />)}
@@ -175,12 +164,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
-
-                {/* =========================================
-                    BLOCK 3: BOTTOM BUFFER (The Copy Below)
-                   ========================================= */}
-
-                {/* Row 1 (Bottom) */}
+                {/* Row 1 Bottom */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row1.map((src, i) => <img key={`btm-r1-1-${i}`} src={src} className="photo-item" />)}
@@ -189,7 +173,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
-                {/* Row 2 (Bottom) */}
+                {/* Row 2 Bottom */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row2.map((src, i) => <img key={`btm-r2-1-${i}`} src={src} className="photo-item" />)}
@@ -198,7 +182,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
-                {/* Row 3 (Bottom) */}
+                {/* Row 3 Bottom */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row3.map((src, i) => <img key={`btm-r3-1-${i}`} src={src} className="photo-item" />)}
@@ -207,7 +191,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
-                {/* Row 4 (Bottom) */}
+                {/* Row 4 Bottom */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row4.map((src, i) => <img key={`btm-r4-1-${i}`} src={src} className="photo-item" />)}
@@ -216,7 +200,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
-                {/* Row 5 (Bottom) */}
+                {/* Row 5 Bottom */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row5.map((src, i) => <img key={`btm-r5-1-${i}`} src={src} className="photo-item" />)}

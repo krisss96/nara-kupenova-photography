@@ -11,17 +11,16 @@ function App() {
     return (
         <Router>
 
-        <main>
+            <main>
 
-            <Navbar />
+                <Navbar />
 
-            <Routes>
-                <Route path="/" element={<MainPage />} />
-                <Route path="/work" element={<PhotoPage />} />
-                <Route path="/about" element={<AboutPage />} />
-            </Routes>
+                <Routes>
+                    <Route path="/" element={<MainPage />} />
+                    <Route path="/work" element={<PhotoPage />} />
+                </Routes>
 
-        </main>
+            </main>
 
         </Router>
     );

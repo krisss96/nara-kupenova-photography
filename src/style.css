@@ -97,6 +97,30 @@ body, html {
     height: 310px;
     width: 270px;
     margin-right: 40px;
+    cursor: pointer;
+}
+
+.img-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    backdrop-filter: blur(25px);
+}
+
+.open-image {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain; /* keeps the aspect ratio correct */
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+    cursor: default;
 }
 
 
@@ -362,3 +386,4 @@ body, html {
     pointer-events: pointer;
     transition: color 0.3s ease;
 }
+

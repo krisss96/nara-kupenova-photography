@@ -59,6 +59,16 @@ function PhotoPage() {
 
     };
 
+    const [selectedImg, setSelectedImg] = useState(null);
+
+    const handleImageClick = (src) => {
+        setSelectedImg(src);
+    };
+
+    const closeOverlay = () => {
+        setSelectedImg(null);
+    };
+
     const loopStyleX = {
         transform: `translateX(${(x % ROW_WIDTH) - ROW_WIDTH}px)`,
     };
@@ -77,139 +87,150 @@ function PhotoPage() {
                 {/* Row 1 Top */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
-                        {_row1.map((src, i) => <img key={`top-r1-1-${i}`} src={src} className="photo-item" />)}
-                        {_row1.map((src, i) => <img key={`top-r1-2-${i}`} src={src} className="photo-item" />)}
-                        {_row1.map((src, i) => <img key={`top-r1-3-${i}`} src={src} className="photo-item" />)}
+                        {_row1.map((src, i) => <img key={`top-r1-1-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row1.map((src, i) => <img key={`top-r1-2-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row1.map((src, i) => <img key={`top-r1-3-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
                     </div>
                 </div>
 
-                {/* Row 2 Top */}
+                {/* Row 2 Top*/}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
-                        {_row2.map((src, i) => <img key={`top-r2-1-${i}`} src={src} className="photo-item" />)}
-                        {_row2.map((src, i) => <img key={`top-r2-2-${i}`} src={src} className="photo-item" />)}
-                        {_row2.map((src, i) => <img key={`top-r2-3-${i}`} src={src} className="photo-item" />)}
+                        {_row2.map((src, i) => <img key={`top-r2-1-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row2.map((src, i) => <img key={`top-r2-2-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row2.map((src, i) => <img key={`top-r2-3-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
                     </div>
                 </div>
 
-                {/* Row 3 Top */}
+                {/* Row 3 Top*/}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
-                        {_row3.map((src, i) => <img key={`top-r3-1-${i}`} src={src} className="photo-item" />)}
-                        {_row3.map((src, i) => <img key={`top-r3-2-${i}`} src={src} className="photo-item" />)}
-                        {_row3.map((src, i) => <img key={`top-r3-3-${i}`} src={src} className="photo-item" />)}
+                        {_row3.map((src, i) => <img key={`top-r3-1-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row3.map((src, i) => <img key={`top-r3-2-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row3.map((src, i) => <img key={`top-r3-3-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
                     </div>
                 </div>
 
-                {/* Row 4 Top */}
+                {/* Row 4 Top*/}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
-                        {_row4.map((src, i) => <img key={`top-r4-1-${i}`} src={src} className="photo-item" />)}
-                        {_row4.map((src, i) => <img key={`top-r4-2-${i}`} src={src} className="photo-item" />)}
-                        {_row4.map((src, i) => <img key={`top-r4-3-${i}`} src={src} className="photo-item" />)}
+                        {_row4.map((src, i) => <img key={`top-r4-1-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row4.map((src, i) => <img key={`top-r4-2-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row4.map((src, i) => <img key={`top-r4-3-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
                     </div>
                 </div>
 
-                {/* Row 5 Top */}
+                {/* Row 5 Top*/}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
-                        {_row5.map((src, i) => <img key={`top-r5-1-${i}`} src={src} className="photo-item" />)}
-                        {_row5.map((src, i) => <img key={`top-r5-2-${i}`} src={src} className="photo-item" />)}
-                        {_row5.map((src, i) => <img key={`top-r5-3-${i}`} src={src} className="photo-item" />)}
+                        {_row5.map((src, i) => <img key={`top-r5-1-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row5.map((src, i) => <img key={`top-r5-2-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row5.map((src, i) => <img key={`top-r5-3-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
                     </div>
                 </div>
-
+                
                 {/* Row 1 Center */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
-                        {_row1.map((src, i) => <img key={`main-r1-1-${i}`} src={src} className="photo-item" />)}
-                        {_row1.map((src, i) => <img key={`main-r1-2-${i}`} src={src} className="photo-item" />)}
-                        {_row1.map((src, i) => <img key={`main-r1-3-${i}`} src={src} className="photo-item" />)}
+                        {_row1.map((src, i) => <img key={`main-r1-1-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row1.map((src, i) => <img key={`main-r1-2-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row1.map((src, i) => <img key={`main-r1-3-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
                     </div>
                 </div>
 
                 {/* Row 2 Center */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
-                        {_row2.map((src, i) => <img key={`main-r2-1-${i}`} src={src} className="photo-item" />)}
-                        {_row2.map((src, i) => <img key={`main-r2-2-${i}`} src={src} className="photo-item" />)}
-                        {_row2.map((src, i) => <img key={`main-r2-3-${i}`} src={src} className="photo-item" />)}
+                        {_row2.map((src, i) => <img key={`main-r2-1-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row2.map((src, i) => <img key={`main-r2-2-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row2.map((src, i) => <img key={`main-r2-3-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
                     </div>
                 </div>
 
                 {/* Row 3 Center */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
-                        {_row3.map((src, i) => <img key={`main-r3-1-${i}`} src={src} className="photo-item" />)}
-                        {_row3.map((src, i) => <img key={`main-r3-2-${i}`} src={src} className="photo-item" />)}
-                        {_row3.map((src, i) => <img key={`main-r3-3-${i}`} src={src} className="photo-item" />)}
+                        {_row3.map((src, i) => <img key={`main-r3-1-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row3.map((src, i) => <img key={`main-r3-2-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row3.map((src, i) => <img key={`main-r3-3-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
                     </div>
                 </div>
 
                 {/* Row 4 Center */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
-                        {_row4.map((src, i) => <img key={`main-r4-1-${i}`} src={src} className="photo-item" />)}
-                        {_row4.map((src, i) => <img key={`main-r4-2-${i}`} src={src} className="photo-item" />)}
-                        {_row4.map((src, i) => <img key={`main-r4-3-${i}`} src={src} className="photo-item" />)}
+                        {_row4.map((src, i) => <img key={`main-r4-1-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row4.map((src, i) => <img key={`main-r4-2-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row4.map((src, i) => <img key={`main-r4-3-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
                     </div>
                 </div>
 
                 {/* Row 5 Center */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
-                        {_row5.map((src, i) => <img key={`main-r5-1-${i}`} src={src} className="photo-item" />)}
-                        {_row5.map((src, i) => <img key={`main-r5-2-${i}`} src={src} className="photo-item" />)}
-                        {_row5.map((src, i) => <img key={`main-r5-3-${i}`} src={src} className="photo-item" />)}
+                        {_row5.map((src, i) => <img key={`main-r5-1-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row5.map((src, i) => <img key={`main-r5-2-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row5.map((src, i) => <img key={`main-r5-3-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
                     </div>
                 </div>
 
-                {/* Row 1 Bottom */}
+                {/* Row 1 Bottom*/}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
-                        {_row1.map((src, i) => <img key={`btm-r1-1-${i}`} src={src} className="photo-item" />)}
-                        {_row1.map((src, i) => <img key={`btm-r1-2-${i}`} src={src} className="photo-item" />)}
-                        {_row1.map((src, i) => <img key={`btm-r1-3-${i}`} src={src} className="photo-item" />)}
+                        {_row1.map((src, i) => <img key={`btm-r1-1-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row1.map((src, i) => <img key={`btm-r1-2-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row1.map((src, i) => <img key={`btm-r1-3-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
                     </div>
                 </div>
 
-                {/* Row 2 Bottom */}
+                {/* Row 2 Bottom*/}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
-                        {_row2.map((src, i) => <img key={`btm-r2-1-${i}`} src={src} className="photo-item" />)}
-                        {_row2.map((src, i) => <img key={`btm-r2-2-${i}`} src={src} className="photo-item" />)}
-                        {_row2.map((src, i) => <img key={`btm-r2-3-${i}`} src={src} className="photo-item" />)}
+                        {_row2.map((src, i) => <img key={`btm-r2-1-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row2.map((src, i) => <img key={`btm-r2-2-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row2.map((src, i) => <img key={`btm-r2-3-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
                     </div>
                 </div>
 
-                {/* Row 3 Bottom */}
+                {/* Row 3 Bottom*/}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
-                        {_row3.map((src, i) => <img key={`btm-r3-1-${i}`} src={src} className="photo-item" />)}
-                        {_row3.map((src, i) => <img key={`btm-r3-2-${i}`} src={src} className="photo-item" />)}
-                        {_row3.map((src, i) => <img key={`btm-r3-3-${i}`} src={src} className="photo-item" />)}
+                        {_row3.map((src, i) => <img key={`btm-r3-1-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row3.map((src, i) => <img key={`btm-r3-2-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row3.map((src, i) => <img key={`btm-r3-3-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
                     </div>
                 </div>
 
-                {/* Row 4 Bottom */}
+                {/* Row 4 Bottom*/}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
-                        {_row4.map((src, i) => <img key={`btm-r4-1-${i}`} src={src} className="photo-item" />)}
-                        {_row4.map((src, i) => <img key={`btm-r4-2-${i}`} src={src} className="photo-item" />)}
-                        {_row4.map((src, i) => <img key={`btm-r4-3-${i}`} src={src} className="photo-item" />)}
+                        {_row4.map((src, i) => <img key={`btm-r4-1-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row4.map((src, i) => <img key={`btm-r4-2-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row4.map((src, i) => <img key={`btm-r4-3-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
                     </div>
                 </div>
 
-                {/* Row 5 Bottom */}
+                {/* Row 5 Bottom*/}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
-                        {_row5.map((src, i) => <img key={`btm-r5-1-${i}`} src={src} className="photo-item" />)}
-                        {_row5.map((src, i) => <img key={`btm-r5-2-${i}`} src={src} className="photo-item" />)}
-                        {_row5.map((src, i) => <img key={`btm-r5-3-${i}`} src={src} className="photo-item" />)}
+                        {_row5.map((src, i) => <img key={`btm-r5-1-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row5.map((src, i) => <img key={`btm-r5-2-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
+                        {_row5.map((src, i) => <img key={`btm-r5-3-${i}`} src={src} className="photo-item" onClick={() => handleImageClick(src)} />)}
                     </div>
                 </div>
 
             </div>
+
+            {selectedImg && (
+                <div className="img-overlay" onClick={closeOverlay}>
+                    <img
+                        src={selectedImg}
+                        className="open-image"
+                        onClick={(e) => e.stopPropagation()}
+                    />
+                </div>
+            )}
+
         </div>
     );
 }

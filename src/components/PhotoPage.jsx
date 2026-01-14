@@ -107,6 +107,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
+                {/*  Row 2 Top */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row2.map((item, i) => <img key={`top-r2-1-${i}`} src={item.src} className="photo-item" onClick={() => handleImageClick(item)} alt={item.title} />)}
@@ -115,6 +116,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
+                {/*  Row 3 Top */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row3.map((item, i) => <img key={`top-r3-1-${i}`} src={item.src} className="photo-item" onClick={() => handleImageClick(item)} alt={item.title} />)}
@@ -123,6 +125,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
+                {/*  Row 4 Top */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row4.map((item, i) => <img key={`top-r4-1-${i}`} src={item.src} className="photo-item" onClick={() => handleImageClick(item)} alt={item.title} />)}
@@ -131,6 +134,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
+                {/*  Row 5 Top */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row5.map((item, i) => <img key={`top-r5-1-${i}`} src={item.src} className="photo-item" onClick={() => handleImageClick(item)} alt={item.title} />)}
@@ -140,9 +144,7 @@ function PhotoPage() {
                 </div>
 
 
-                {/* =======================
-                    BLOCK 2: MAIN
-                   ======================= */}
+                {/* Row 1 Center */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row1.map((item, i) => <img key={`main-r1-1-${i}`} src={item.src} className="photo-item" onClick={() => handleImageClick(item)} alt={item.title} />)}
@@ -151,6 +153,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
+                {/* Row 2 Center */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row2.map((item, i) => <img key={`main-r2-1-${i}`} src={item.src} className="photo-item" onClick={() => handleImageClick(item)} alt={item.title} />)}
@@ -159,6 +162,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
+                {/* Row 3 Center */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row3.map((item, i) => <img key={`main-r3-1-${i}`} src={item.src} className="photo-item" onClick={() => handleImageClick(item)} alt={item.title} />)}
@@ -167,6 +171,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
+                {/* Row 4 Center */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row4.map((item, i) => <img key={`main-r4-1-${i}`} src={item.src} className="photo-item" onClick={() => handleImageClick(item)} alt={item.title} />)}
@@ -175,6 +180,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
+                {/* Row 5 Center */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row5.map((item, i) => <img key={`main-r5-1-${i}`} src={item.src} className="photo-item" onClick={() => handleImageClick(item)} alt={item.title} />)}
@@ -184,9 +190,7 @@ function PhotoPage() {
                 </div>
 
 
-                {/* =======================
-                    BLOCK 3: BOTTOM BUFFER
-                   ======================= */}
+                {/* Row 1 Bottom */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row1.map((item, i) => <img key={`btm-r1-1-${i}`} src={item.src} className="photo-item" onClick={() => handleImageClick(item)} alt={item.title} />)}
@@ -195,6 +199,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
+                {/*  Row 2 Bottom */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row2.map((item, i) => <img key={`btm-r2-1-${i}`} src={item.src} className="photo-item" onClick={() => handleImageClick(item)} alt={item.title} />)}
@@ -203,6 +208,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
+                {/*  Row 3 Bottom */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row3.map((item, i) => <img key={`btm-r3-1-${i}`} src={item.src} className="photo-item" onClick={() => handleImageClick(item)} alt={item.title} />)}
@@ -211,6 +217,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
+                {/*  Row 4 Bottom */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row4.map((item, i) => <img key={`btm-r4-1-${i}`} src={item.src} className="photo-item" onClick={() => handleImageClick(item)} alt={item.title} />)}
@@ -219,6 +226,7 @@ function PhotoPage() {
                     </div>
                 </div>
 
+                {/*  Row 5 Bottom */}
                 <div className="row-container">
                     <div className="row-horiz" style={loopStyleX}>
                         {_row5.map((item, i) => <img key={`btm-r5-1-${i}`} src={item.src} className="photo-item" onClick={() => handleImageClick(item)} alt={item.title} />)}
@@ -229,7 +237,6 @@ function PhotoPage() {
 
             </div>
 
-            {/* OVERLAY WITH NAVIGATION & TITLE */}
             {selectedIndex !== null && (
                 <div className="img-overlay" onClick={closeOverlay}>
                     <button className="nav-arrow left" onClick={showPrev}>&#10094;</button>
@@ -240,7 +247,6 @@ function PhotoPage() {
                         onClick={(e) => e.stopPropagation()}
                     />
 
-                    {/* CUSTOM TITLE */}
                     <div className="image-caption" onClick={(e) => e.stopPropagation()}>
                         {allImages[selectedIndex].title}
                     </div>

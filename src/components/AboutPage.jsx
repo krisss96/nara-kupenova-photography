@@ -1,59 +1,73 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const textContent = [
     {
         id: 1,
-        text: "I am a visual storyteller fascinated by the raw energy of the streets and the surreal nature of everyday life. Photography for me is not just about capturing a moment, but about framing a feeling."
+        text: "My name is Nara Kupenova, a multimedia artist born in 2006 in Varna, Bulgaria. I work across photography and digital art, using visual storytelling as a way to explore emotion and atmosphere.",
+        imgLabelTop: "ABOUT",
+        imgLabelBottom: "ME",
+        imgSrc: "./assets/portrait.png"
     },
     {
         id: 2,
-        text: "Based in Varna, I explore the interplay between light, shadow, and color. My work is heavily inspired by neo-noir aesthetics and the unexpected beauty found in urban decay."
+        text: "I create conceptual artworks that blend street photography with surrealist aesthetics. I combine photographic elements with digital manipulation and traditional techniques to create images that exist between reality and imagination.My work often focuses on mood, subconscious emotion and the contrast between the visible world and inner experience.",
+        imgLabelTop: "MY",
+        imgLabelBottom: "WORK",
+        imgSrc: "./assets/47e045d402f8e41561384a8cf0cdca9a.jpg"
     },
     {
         id: 3,
-        text: "Available for portraits, event photography, and creative collaborations. Let's create something timeless together."
+        text: "I create surrealist and conceptual photography for individuals who are looking for expressive, artistic images beyond traditional portraiture. I am available for creative photo sessions and collaborations.If you are interested in working together, exhibiting my work or creating something unique, feel free to get in touch for more information.",
+        imgLabelTop: "WORKING",
+        imgLabelBottom: "WITH ME",
+        imgSrc: "./assets/portrait2.png"
     }
 ];
 
 function AboutPage() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isAnimating, setIsAnimating] = useState(false);
-
-    const handleAdvance = () => {
-        if (isAnimating) return;
-
-        setIsAnimating(true);
-        setTimeout(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % textContent.length);
-            setIsAnimating(false);
-        }, 600);
-    };
-
     return (
         <section id="about-section" className="about-section">
-            <div className="about-content">
+            <div className="about-container">
 
-                <div className="about-left-col">
-                    <h2 className="about-title">ABOUT</h2>
-                    <img
-                        src="./assets/portrait.png"
-                        alt="Nara Kupenova"
-                        className="about-portrait"
-                    />
-                    <h2 className="about-title" style={{textAlign: 'right', width: '100%'}}>ME</h2>
-                </div>
-
-                <div className="about-right-col">
+                {textContent.map((item, index) => (
                     <div
-                        className={`film-text ${isAnimating ? 'rolling' : ''}`}
-                        onClick={handleAdvance}
+                        key={item.id}
+                        className={`about-row ${index % 2 === 1 ? 'reverse' : ''}`}
                     >
-                        <div key={currentIndex} className={`text-content ${isAnimating ? 'fade-out' : 'fade-in'}`}>
-                            <p>{textContent[currentIndex].text}</p>
+                        <div className="about-image-col">
+                            <h2 className="overlay-text top-left">{item.imgLabelTop}</h2>
+                            <div className="image-wrapper">
+                                <img
+                                    src={item.imgSrc}
+                                    alt="Nara Kupenova"
+                                    className="about-portrait"
+                                />
+                            </div>
+                            <h2 className="overlay-text bottom-right">{item.imgLabelBottom}</h2>
                         </div>
 
-                        <div className="click">CLICK HERE</div>
+                        <div className="about-text-col">
+                            <div className="grey-text-box">
+                                <p>{item.text}</p>
+                            </div>
+                        </div>
                     </div>
+                ))}
+
+                <div className="contacts">
+
+                    <div className="contact-col">
+                        <h3>LET'S COLLABORATE</h3>
+                        <p className="contact-info">08778000000</p>
+                        <p className="contact-info">narakupenovaart@gmail.com</p>
+                    </div>
+
+                    <div className="contact-col">
+                        <h3>MY BLOGS</h3>
+                        <a href="https://open.substack.com/pub/narcarca/p/bdf?utm_campaign=post&utm_medium=web" target="_blank" rel="noopener noreferrer">Чарът на абстрактната и сюрреалистична фотография</a>
+                        <a href="https://open.substack.com/pub/narcarca/p/neo-street-photography-a-journey?utm_campaign=post&utm_medium=web" target="_blank" rel="noopener noreferrer">Neo Street Photography. A Journey from Distortion to Resolution</a>
+                    </div>
+
                 </div>
 
             </div>

@@ -13,7 +13,7 @@ const textContent = [
         text: "I create conceptual artworks that blend street photography with surrealist aesthetics. I combine photographic elements with digital manipulation and traditional techniques to create images that exist between reality and imagination.My work often focuses on mood, subconscious emotion and the contrast between the visible world and inner experience.",
         imgLabelTop: "MY",
         imgLabelBottom: "WORK",
-        imgSrc: "./assets/47e045d402f8e41561384a8cf0cdca9a.jpg"
+        imgSrc: "./assets/Group4.png"
     },
     {
         id: 3,

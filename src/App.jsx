@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainPage from "./components/MainPage";
 import PhotoPage from "./components/PhotoPage";
 import AboutPage from "./components/AboutPage";
+
+import AdminPage from "./AdminPage.jsx";
 import Navbar from "./components/Navbar";
 
 
@@ -18,6 +20,9 @@ function App() {
                 <Routes>
                     <Route path="/" element={<MainPage />} />
                     <Route path="/work" element={<PhotoPage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/admin" element={<AdminPage />} />
+
                 </Routes>
 
             </main>

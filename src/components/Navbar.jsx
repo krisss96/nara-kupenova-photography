@@ -8,6 +8,8 @@ function Navbar() {
             <ul className="nav-links">
                 <li><Link to="/">HOME</Link></li>
                 <li><Link to="/work">GALLERY</Link></li>
+                <li><Link to="/about">ABOUT</Link></li>
+                <li><Link to="/admin">ADMIN</Link></li>
             </ul>
         </nav>
     );

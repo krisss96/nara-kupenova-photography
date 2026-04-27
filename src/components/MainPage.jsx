@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import AboutPage from './AboutPage';
 
 const MainPage = () => {
     const [isHovering, setIsHovering] = useState(false);
     const [isNavigating, setIsNavigating] = useState(false);
+    const navigate = useNavigate();
 
     const handleGalleryClick = (e) => {
         e.preventDefault();
         setIsNavigating(true);
-        setTimeout(() => window.location.href = '/work', 800);
+        setTimeout(() => navigate('/work'), 800);
     };
 
     return (
@@ -36,14 +38,14 @@ const MainPage = () => {
                             Hello! I am neo-street and surrealist photographer based in Varna, Bulgaria. Welcome to my portfolio!
                         </p>
 
-                        <a href="/work"
+                        <Link to="/work"
                            className="gallery-btn"
                            onClick={handleGalleryClick}
                            onMouseEnter={() => setIsHovering(true)}
                            onMouseLeave={() => setIsHovering(false)}
                         >
                             GALLERY
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

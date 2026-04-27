@@ -12,21 +12,15 @@ import Navbar from "./components/Navbar";
 function App() {
     return (
         <Router>
-
             <main>
-
                 <Navbar />
-
                 <Routes>
                     <Route path="/" element={<MainPage />} />
                     <Route path="/work" element={<PhotoPage />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/admin" element={<AdminPage />} />
-
                 </Routes>
-
             </main>
-
         </Router>
     );
 }
